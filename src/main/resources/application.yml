@@ -1,0 +1,33 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://user:123456@127.0.0.1:27017/spring-boot-v2
+
+  jackson:
+    # json时间格式化
+    # date-format: yyyy-MM-dd hh:mm:ss
+    # 时区
+    time-zone: GMT+8
+
+management:
+  server:
+    port: 8081
+  endpoint:
+    # 是否允许shutdown
+    shutdown:
+      enabled: false
+  endpoints:
+    # web展示信息
+    web:
+      base-path: /actuator
+      exposure:
+        include: "*"
+
+#logging:
+#  level:
+#    root: info
+#    org:
+#      springframework:
+#        data:
+#          mongodb:
+#            core: debug
