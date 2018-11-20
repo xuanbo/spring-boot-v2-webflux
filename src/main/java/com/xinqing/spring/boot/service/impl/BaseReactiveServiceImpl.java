@@ -5,7 +5,6 @@ import com.xinqing.spring.boot.entity.Entity;
 import com.xinqing.spring.boot.service.BaseReactiveService;
 import com.xinqing.spring.boot.util.EntityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -31,11 +30,6 @@ public abstract class BaseReactiveServiceImpl<T extends Entity> implements BaseR
     @Override
     public Flux<T> findByIds(List<String> ids) {
         return reactiveMongoRepository.findAllById(ids);
-    }
-
-    @Override
-    public Flux<T> findAll(Pageable pageable) {
-        return reactiveMongoRepository.findAll(pageable);
     }
 
     @Override

@@ -1,7 +1,6 @@
 package com.xinqing.spring.boot.service;
 
 import com.xinqing.spring.boot.entity.Entity;
-import org.springframework.data.domain.Pageable;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -30,14 +29,6 @@ public interface BaseReactiveService<T extends Entity> {
      * @return Flux<T>
      */
     Flux<T> findByIds(List<String> ids);
-
-    /**
-     * 分页查询
-     *
-     * @param pageable 分页信息
-     * @return Flux<T>
-     */
-    Flux<T> findAll(Pageable pageable);
 
     /**
      * 新增
